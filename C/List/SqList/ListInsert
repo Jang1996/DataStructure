@@ -1,0 +1,12 @@
+//在第i个位置前插入e,注意这里i是指线性表顺序，线性表从1开始算
+Status ListInsert(SqList *L,int i,ElemType e){
+if(i<1||i>L->length+1) return ERROR;
+if(L->length==MAXSIZE) return ERROR;
+if(i<L->length) {
+for(int k=L->length-1;k>=i-1;--k)
+data[k+1]=data[k];
+}
+data[i-1]=e;
+L->length++;
+return OK;
+}

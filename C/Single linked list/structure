@@ -1,4 +1,0 @@
-typedef struct ListNode{
-ElemType data;
-ListNode *next;
-}ListNode,*LinkList;

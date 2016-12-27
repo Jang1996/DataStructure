@@ -1,6 +1,0 @@
-status GetElem(List *L,int i,ElemType *e){
-if(L->length==0) return ERROR;
-if(i<1||i>L->length) return ERROR;
-e=data[i-1];
-return OK;
-}
