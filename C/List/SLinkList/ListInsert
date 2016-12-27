@@ -1,4 +1,4 @@
-Status ListInsert(LinkList *L,int i,ElemType e){
+Status ListInsert(LinkList L,int i,ElemType e){
 
 ListNode *cur=L;int k=1;
 while(cur&&k<i){
