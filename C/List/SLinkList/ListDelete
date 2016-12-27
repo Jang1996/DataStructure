@@ -1,0 +1,19 @@
+//在带头结点的单链线性表中，删除第i个元素，并由e返回其值
+//例如：dummy->1->2->3->null,我要删除结点“3”，这是第3个元素，即i=3,此时L和cur都指向dummy,现在需要cur指向2，所以k=0,k<i-1;
+Status ListDelete(SLinkList *L, int i, ElemType *e){
+	
+	int k = 0; SLinkNode *cur = L,*p;
+	
+		while (cur->next&&k < i - 1){
+			++k;
+			cur = cur->next;
+
+		}
+		if (!(cur->next) || k > i - 1) return ERROR;
+	
+	p = cur->next;
+	cur->next = p->next;
+	e = p->data;
+	free(p);
+	return OK;
+}
