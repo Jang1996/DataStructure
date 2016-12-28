@@ -1,0 +1,14 @@
+void QuickSort(int a[],int left,int right){
+if(left<right){
+int i=left,j=right,X=a[i];
+while(i<j){
+while(i<j&&a[j]>=X) j--;
+if(i<j) a[i++]=a[j];
+while(i<j&&a[i]<X) i++;
+if(i<j) a[j--]=a[i];
+}
+a[i]=X;
+QuickSort(a,left,i-1);
+QuickSort(a,i+1,right);
+}
+}
