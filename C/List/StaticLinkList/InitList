@@ -1,0 +1,10 @@
+数组的第一个元素和最后一元素都不存储数据，第一个元素，即下标为0的元素的cur存放备用链表的第一个结点下标，最后一个元素的cur存放第一个有数值元素的下标。
+相当于单链表的头结点。
+未被使用的数组元素称为：备用链表
+//space[i].cur相当于next指针
+Status InitList(StaticLinkList space){
+for(int i=0;i<MAXSIZE-1;++i)
+space[i].cur=i+1;
+space[MAXSIZE-1].cur=0;
+return OK;
+}
