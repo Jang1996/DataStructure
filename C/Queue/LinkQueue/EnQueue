@@ -1,0 +1,10 @@
+Status EnQueue(LinkQueue *Q,QElemType e){
+QueuePtr s=(QueuePtr)malloc(sizeof(QNode));
+if(!s)
+exit(OVERFLOW);//存储分配失败
+s->data=e;
+s->next=NULL;
+Q->rear->next=s;
+Q->rear=s;
+return OK;
+}
