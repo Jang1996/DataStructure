@@ -1,0 +1,8 @@
+Status Push(LinkStack *S,SElemType e){
+LinkStackPtr s=(LinkStackPtr)malloc(sizeof(StackNode));
+s->data=e;
+s->next=S->top;
+S->top=s;
+S->count++;
+return OK;
+}
