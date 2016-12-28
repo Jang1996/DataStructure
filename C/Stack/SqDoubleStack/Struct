@@ -1,0 +1,5 @@
+typedef struct{
+SElemType data[MAXSIZE];
+int top1;
+int top2;
+}SqDoubleStack;
