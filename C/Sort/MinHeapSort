@@ -1,0 +1,9 @@
+void MinHeapFixup(int a[],int i){
+int j=(i-1)/2;
+while(j>=0&&i!=0){//一定要注意i!=0的情况，-1/2==0;
+if(a[i]>=a[j]) break;
+swap(a[i],a[j]);
+i=j;
+j=(i-1)/2;
+}
+}
