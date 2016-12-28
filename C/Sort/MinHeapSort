@@ -7,3 +7,34 @@ i=j;
 j=(i-1)/2;
 }
 }
+void MinHeapFixdown(int a[],int i,int len){
+int j=2*i+1;
+while(j<len){
+if(j+1<len&&a[j+1]<a[j]) j++;
+if(a[i]>=a[j]) break;
+swap(a[i],a[j]);
+i=j;
+j=2*i+1;
+}
+}
+//在末尾添加，然后一路fixup
+void AddNumber(int a[],int i,int nNum){
+a[i]=nNum;
+MinHeapFixup(a,i);
+}
+//堆只能删除堆顶元素，所以把最后元素与第一个元素交换，然后Fixdown的时候，传入len-1,而不是len,不比较交换后的最后一个元素，相当于删除
+void DeleteNumber(int a[],int len){
+swap(a[0],a[len-1]);
+MinHeapFixup(a,i,len-1);
+}
+void MakeMinHeap(int a[],int len){
+for(int i=(len-1)/2;i>0;--i)
+MinHeapFixdown(a,i,len);
+}
+void MinHeapSort(int a[],int len){
+for(int i=len-1;i>=1;i--){//这里是i>=1，而不是i>=0,比到最后，最后一位自然是最大的，最小堆排出来的是递减
+swap(a[i],a[0]);
+MinHeapFixdown(a,0,i);
+}
+}
+
