@@ -1,0 +1,28 @@
+void merge(int a[],int first,int mid,int last,int temp[]){
+int i=first,j=mid,m=mid+1,n=last,k=0;
+while(i<=j&&m<=n){
+if(a[i]<=a[m]) temp[k++]=a[i++];
+else temp[k++]=a[m++];
+}
+while(i<=j)
+temp[k++]=a[i++];
+while(m<=n)
+temp[k++]=a[m++];
+for(int i=0;i<k;i++)
+a[first+i]=temp[i];
+
+}
+void Merge(int a[],int left,int right,int temp[]){
+if(left<right){
+int mid=left+(right-left)/2;
+Merge(a,left,mid,temp);
+Merge(a,mid+1,right,temp);
+merge(a,left,mid,right,temp);
+}}
+bool MergeSort(int a[],int len){
+int *p=new int[len];
+if(!p) return false;
+Merge(a,0,len-1,p);
+delete[] p;
+return true;
+}
