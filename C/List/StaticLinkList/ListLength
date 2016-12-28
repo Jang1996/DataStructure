@@ -1,0 +1,8 @@
+int ListLength(StaticLinkList L){
+int j=0,k=L[MAX_SIZE-1].cur;
+while(k){
+k=L[k].cur;
+++j
+}
+return j;
+}
