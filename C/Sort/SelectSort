@@ -4,6 +4,15 @@ for(i=0;i<len;++i){
 nMin=i;
 for(j=i+1;j<len;++j)
 if(a[j]<a[nMin])
-{swap(a[j],a[nMin]);nMin=j;}
+nMin=j;
+swap(a[j],a[nMin]);
 }
 }
+其中swap实现
+ void swap(int a,int b){
+ if(a!=b){
+ a^=b;
+ b^=a;
+ a^=b;
+ }
+ }
