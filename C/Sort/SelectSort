@@ -1,0 +1,9 @@
+void SelectSort(int a[],int len){
+int i,j,nMin;
+for(i=0;i<len;++i){
+nMin=i;
+for(j=i+1;j<len;++j)
+if(a[j]<a[nMin])
+{swap(a[j],a[nMin]);nMin=j;}
+}
+}
