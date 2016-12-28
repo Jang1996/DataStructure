@@ -1,0 +1,14 @@
+ADT 串（string)
+Data 串中元素仅由一个字符组成，相邻元素具有前驱和后继关系
+Opreation
+StrCopy(T,S);
+ClearString(S);
+StringEmpty(S);
+StrLength(S);
+StrCompare(S,T);
+SubString(Sub,S,pos,len);
+Index(S,T,pos);
+Replace(S,T,V);
+StrInsert(S,pos,T);
+StrDelete(S,pos,len);
+endADT
