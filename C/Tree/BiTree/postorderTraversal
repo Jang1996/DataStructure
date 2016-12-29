@@ -1,0 +1,34 @@
+递归
+vector<int> postorderTraversal(TreeNode *root) {
+        // write your code here
+        vector<int> v;
+        if(root==NULL) return v;//虽然下面那个函数也对root是否为空做了判断，但是下面函数只是判断，没有返回值，所以这里的判断还是必要的
+        postorderTraversal(root,v);
+    }
+    void postorderTraversal(TreeNode *root,vector<int> &v){
+        if(root==NULL) return;
+        postorderTraversal(root->left,v);
+        postorderTraversal(root->right,v);
+        v.push_back(root->val);
+    }
+非递归
+//后续的顺序是左-右-根，所以当一个节点值被取出来时，它的左右子节点要么不存在，要么已经被访问过了
+vector<int> postorderTraversal(TreeNode *root) {
+        vector<int> res;
+        if (!root) return res;
+        stack<TreeNode*> s;
+        s.push(root);
+        TreeNode *head = root;
+        while (!s.empty()) {
+            TreeNode *top = s.top();
+            if ((!top->left && !top->right) || top->left == head || top->right == head) {
+                res.push_back(top->val);
+                s.pop();
+                head = top;
+            } else {
+                if (top->right) s.push(top->right);
+                if (top->left) s.push(top->left);
+            }
+        }
+        return res;
+    }
