@@ -1,0 +1,30 @@
+递归
+ vector<int> preorderTraversal(TreeNode *root) {
+        vector<int> v;
+        if(root==NULL) return v;
+        preorderTraversal(root,v);
+        return v;
+        
+    }
+    void preorderTraversal(TreeNode *root,vector<int> &v){
+        if(root==NULL) return;
+       v.push_back(root->val);
+        preorderTraversal(root->left,v);
+       preorderTraversal(root->right,v);
+    }
+ 非递归
+ vector<int> preorderTraversal(TreeNode *root){
+ vector<int> v;
+ if(root==NULL) return v;
+ stack<TreeNode*> s;
+ s.push(root);//这里不要写成s.push(root->val)了
+ while(!s.empty()){
+ TreeNode *p=s.top();
+ v.push_back(p->val);
+ s.pop();
+ if(p->right) s.push(p->right);
+ if(p->left) s.push(p->left);
+ }
+ return v;
+ }
+ 
