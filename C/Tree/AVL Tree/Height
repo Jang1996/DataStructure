@@ -1,0 +1,4 @@
+static int Height(AvlNode *p){
+if(p==NULL) return -1;
+else return p->Height;
+}
