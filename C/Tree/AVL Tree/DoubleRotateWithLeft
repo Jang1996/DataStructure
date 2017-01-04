@@ -1,0 +1,4 @@
+AvlNode* DoubleRotateWithLeft(AvlNode *k3){
+k3->left=SingleRotateWithRight(k3->left);
+return SingleRotateWithLeft(k3);
+}
