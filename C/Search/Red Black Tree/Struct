@@ -1,0 +1,6 @@
+typedef enum ColorType{Red,Black}ColorType;
+typedef struct RedBlackNode{
+ElementType Element;
+struct RedBlackNode *left,*right;
+ColorType Color;
+}
