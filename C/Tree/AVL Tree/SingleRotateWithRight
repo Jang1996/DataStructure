@@ -1,0 +1,8 @@
+AvlNode* SingleRotateWithRight(AvlNode *k1){
+AvlNode *k2=k1->right;
+k1->right=k2->left;
+k2->left=k1;
+k1->Height=1+max(Height(k1->left),Height(k1->right));
+k2->Height=1+max(Height(k2->left),Height(k2->right));
+return k2;
+}
